@@ -1,37 +1,19 @@
-## Welcome to GitHub Pages
+## An experiment if Brain Control Interface as an Instrument
 
-You can use the [editor on GitHub](https://github.com/ApocPro/Cartesian-Theater/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+Originally designed as a PureData patch for performance installations, this is now growing into a full Brain Control Interface.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Moving from Pd to Max
+PureData had amazing potential and powerful audio visual controls, but with the discontinuation of PureData-Extended and the PureData-Vanilla requiring constant maintanence of libraries, I decided to move this project into Max. I am still an avid Pd user, but having to stop and update libraries everytime I needed to use this system for a performance was just simply no longer feasible
 
-### Markdown
+Even Max is too simplistic for the actual BCI.  The Max Patches are for audio and visual control, but to improve the reliability of processing of EEG data I had to build the actual interface in Python.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## OpenBCI
+OpenBCI is an open source hardware that is the cutting edge of BCI on the market.  They produce the best commercial EEG platform that I have found with a complete open source mindset to allow developers to go into the Hardware and the software and develop their own implementation.
 
-```markdown
-Syntax highlighted code block
+### Ganglion
+The current system uses a 4 channel Ganglion.  This allows 2 channels in the visual cortex and 2 channels either on the motor cortex or on the frontal cortex.  The frontal cortex provides also eye movement information and is easier to implement using a simple headband.
 
-# Header 1
-## Header 2
-### Header 3
+The motor cortex requires a headset and for that I currently use the Mk IV.  This is complete overkill for 4 channels, but I am hoping to move to using the Cyton and Daisy soon.
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ApocPro/Cartesian-Theater/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+# Python and SciKitLearn
+In order to properly deal with real time EEG data, it was necessary to build a CNN model to learn the basic reactions to stimulous.  The current iteration is based on a 4 quadrant system and recognistion of stimulous in one of the quadrants.  This is hopefully used to allow participants to think about moving a mouse to the desired location and recognise where they are directing the mouse.  This is a super simple proof of concept that we hope to expand upon, but for now we are just 
