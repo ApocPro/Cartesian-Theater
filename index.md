@@ -1,4 +1,4 @@
-## An experiment if Brain Control Interface as an Instrument
+## An experiment in Brain Control Interface as an Instrument
 
 Originally designed as a PureData patch for performance installations, this is now growing into a full Brain Control Interface.
 
@@ -15,5 +15,5 @@ The current system uses a 4 channel Ganglion.  This allows 2 channels in the vis
 
 The motor cortex requires a headset and for that I currently use the Mk IV.  This is complete overkill for 4 channels, but I am hoping to move to using the Cyton and Daisy soon.
 
-# Python and SciKitLearn
+## Python and SciKitLearn
 In order to properly deal with real time EEG data, it was necessary to build a CNN model to learn the basic reactions to stimulous.  The current iteration is based on a 4 quadrant system and recognistion of stimulous in one of the quadrants.  This is hopefully used to allow participants to think about moving a mouse to the desired location and recognise where they are directing the mouse.  This is a super simple proof of concept that we hope to expand upon, but for now we are just 
